@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/operations';
 import { ListItem, Text, Buttons } from './ContactsListItem.styled';
 import { Button } from 'components';
 import { theme } from '../../styles/theme';
 import { FaUserAlt, FaPhoneAlt } from 'react-icons/fa';
-import { MdAutorenew } from 'react-icons/md';
 
 function ContactsListItem({ id, name, number }) {
   const dispatch = useDispatch();
@@ -22,7 +21,6 @@ function ContactsListItem({ id, name, number }) {
       </Text>
       <Buttons>
         <Button type="button" onClick={() => dispatch(deleteContact(id))}>
-          <MdAutorenew size={theme.spacing(6)} />
           Delete
         </Button>
       </Buttons>
