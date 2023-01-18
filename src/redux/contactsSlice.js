@@ -28,7 +28,7 @@ const contactsSlice = createSlice({
     [createContact.fulfilled](state, { payload }) {
       state.isLoading = false;
       state.error = null;
-      state.items = [payload, ...state.items];
+      state.items = [...state.items, payload];
     },
     [deleteContact.fulfilled](state, { payload }) {
       state.isLoading = false;
