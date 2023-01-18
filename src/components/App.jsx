@@ -27,13 +27,13 @@ export default function App() {
       <Section>
         <Container>
           {loadingStatus && <Loader />}
+          {errorStatus && <h2>{errorStatus}</h2>}
           {contacts.length > 0 && (
             <>
               <Filter />
               <ContactsList />
             </>
           )}
-          {errorStatus && <h2>{errorStatus}</h2>}
         </Container>
       </Section>
       <GlobalStyleComponent />
